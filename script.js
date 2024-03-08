@@ -301,11 +301,9 @@ function createElem() {
       }
       
      
-   //   createElem();
     });
   });
   
-  // Call createElem() after event listeners are attached
   
   
   let labels = document.querySelectorAll('.check-label');
@@ -323,16 +321,15 @@ labels.forEach((label, index) => {
 
     input.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
-        task.inputVal[index] = input.value; // Update task status when Enter key is pressed
-        updateItemCount(); // Update the item count
-        input.blur(); // Trigger blur event to switch back to label
+        task.inputVal[index] = input.value;
+        updateItemCount(); 
+        input.blur(); 
       }
     });
 
     input.addEventListener("blur", function () {
       label.textContent = input.value;
-      task.inputVal[index] = input.value; // Update task status when input is blurred
-      // Update the list item directly instead of recreating the entire list
+      task.inputVal[index] = input.value; 
       listItem.replaceChild(label, input);
     });
   });
